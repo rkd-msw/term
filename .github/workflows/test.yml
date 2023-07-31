@@ -28,8 +28,8 @@ jobs:
     strategy:
       fail-fast: false # Even if one job fails we still want to see the other ones
       matrix:
-        # 1.53 is MSRV. Keep in sync with Cargo.toml
-        rust: [1.53, stable, nightly]
+        # 1.56 is MSRV. Keep in sync with Cargo.toml
+        rust: [1.56, stable, nightly]
         # NOTE: Features to test must be specified manually. They are applied to all versions seperately.
        #
         # This has the advantage of being more flexibile and thorough
@@ -47,7 +47,5 @@ jobs:
       # NOTE: We only run `cargo test`. No need for a seperate `cargo check`
       - name: Test
         run: |
-          # Force a once-cell version compatible with 1.53
-          cargo update --package once_cell --precise 1.14.0
           cargo test --locked --verbose --features "${{ matrix.features }}"
  
