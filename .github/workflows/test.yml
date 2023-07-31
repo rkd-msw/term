@@ -28,8 +28,8 @@ jobs:
     strategy:
       fail-fast: false # Even if one job fails we still want to see the other ones
       matrix:
-        # 1.56 is MSRV. Keep in sync with Cargo.toml
-        rust: [1.56, stable, nightly]
+        # 1.63 is MSRV. Keep in sync with Cargo.toml
+        rust: [1.63, stable, nightly]
         # NOTE: Features to test must be specified manually. They are applied to all versions seperately.
        #
         # This has the advantage of being more flexibile and thorough
