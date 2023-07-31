@@ -47,5 +47,5 @@ jobs:
       # NOTE: We only run `cargo test`. No need for a seperate `cargo check`
       - name: Test
         run: |
-          cargo test --locked --verbose --features "${{ matrix.features }}"
+          cargo test --verbose --features "${{ matrix.features }}"
  
